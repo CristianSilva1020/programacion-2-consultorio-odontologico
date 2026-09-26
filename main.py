@@ -29,8 +29,34 @@ while True:
         print("Opción inválida. Intente nuevamente.")
 
 print()
+print("Tipo de atención:")
+print("1. Limpieza")
+print("2. Calzas")
+print("3. Extracción")
+print("4. Diagnóstico")
+
+while True:
+    opcion_atencion = input("Seleccione una opción: ")
+
+    if opcion_atencion == "1":
+        tipo_atencion = "Limpieza"
+        break
+    elif opcion_atencion == "2":
+        tipo_atencion = "Calzas"
+        break
+    elif opcion_atencion == "3":
+        tipo_atencion = "Extracción"
+        break
+    elif opcion_atencion == "4":
+        tipo_atencion = "Diagnóstico"
+        break
+    else:
+        print("Opción inválida. Intente nuevamente.")
+
+print()
 print("Datos registrados:")
 print("Cédula:", cedula)
 print("Nombre:", nombre)
 print("Teléfono:", telefono)
 print("Tipo de cliente:", tipo_cliente)
+print("Tipo de atención:", tipo_atencion)
