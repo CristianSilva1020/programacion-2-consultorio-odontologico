@@ -74,6 +74,29 @@ else:
         except ValueError:
             print("Debe ingresar un número entero válido.")
 
+# Prioridad de atención
+print()
+print("Prioridad de atención:")
+print("1. Normal")
+print("2. Urgente")
+
+while True:
+    opcion_prioridad = input("Seleccione una opción: ")
+
+    if opcion_prioridad == "1":
+        prioridad = "Normal"
+        break
+    elif opcion_prioridad == "2":
+        prioridad = "Urgente"
+        break
+    else:
+        print("Opción inválida. Intente nuevamente.")
+
+# Fecha de la cita
+print()
+fecha_cita = input("Ingrese la fecha de la cita (dd/mm/aaaa): ")
+
+
 # Datos registrados
 print()
 print("Datos registrados:")
@@ -83,3 +106,5 @@ print("Teléfono:", telefono)
 print("Tipo de cliente:", tipo_cliente)
 print("Tipo de atención:", tipo_atencion)
 print("Cantidad:", cantidad)
+print("Prioridad:", prioridad)
+print("Fecha de la cita:", fecha_cita)
