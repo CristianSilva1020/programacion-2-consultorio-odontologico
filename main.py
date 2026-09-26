@@ -212,3 +212,27 @@ print("========================================")
 print("Total de clientes:", len(clientes))
 print("Ingresos totales recibidos: $", ingresos_totales)
 print("Número de clientes para extracción:", clientes_extraccion)
+
+# Ordenamos clientes de mayor a menor por valor de la atención
+for i in range(len(clientes) - 1):
+    for j in range(len(clientes) - 1 - i):
+
+        if clientes[j]["valor_atencion"] < clientes[j + 1]["valor_atencion"]:
+            auxiliar = clientes[j]
+            clientes[j] = clientes[j + 1]
+            clientes[j + 1] = auxiliar
+
+# Clientes ordenados
+
+print()
+print("========================================")
+print("CLIENTES ORDENADOS POR VALOR DE ATENCIÓN")
+print("========================================")
+
+for cliente in clientes:
+    print(
+        "Cédula:", cliente["cedula"],
+        "- Nombre:", cliente["nombre"],
+        "- Atención:", cliente["tipo_atencion"],
+        "- Valor atención: $", cliente["valor_atencion"]
+    )
