@@ -3,10 +3,12 @@ print("   CONSULTORIO ODONTOLÓGICO DR. XXX")
 print("========================================")
 print()
 
+#Datos básicos del cliente
 cedula = input("Ingrese la cédula del cliente: ")
 nombre = input("Ingrese el nombre del cliente: ")
 telefono = input("Ingrese el teléfono del cliente: ")
 
+#Tipo de cliente
 print()
 print("Tipo de cliente:")
 print("1. Particular")
@@ -28,6 +30,7 @@ while True:
     else:
         print("Opción inválida. Intente nuevamente.")
 
+#Tipo de atención
 print()
 print("Tipo de atención:")
 print("1. Limpieza")
@@ -53,6 +56,25 @@ while True:
     else:
         print("Opción inválida. Intente nuevamente.")
 
+# Cantidad
+if tipo_atencion == "Limpieza" or tipo_atencion == "Diagnóstico":
+    cantidad = 1
+    print()
+    print("La cantidad para", tipo_atencion, "es automáticamente 1.")
+else:
+    while True:
+        try:
+            cantidad = int(input("Ingrese la cantidad: "))
+
+            if cantidad > 0:
+                break
+            else:
+                print("La cantidad debe ser mayor que cero.")
+
+        except ValueError:
+            print("Debe ingresar un número entero válido.")
+
+# Datos registrados
 print()
 print("Datos registrados:")
 print("Cédula:", cedula)
@@ -60,3 +82,4 @@ print("Nombre:", nombre)
 print("Teléfono:", telefono)
 print("Tipo de cliente:", tipo_cliente)
 print("Tipo de atención:", tipo_atencion)
+print("Cantidad:", cantidad)
