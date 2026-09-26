@@ -96,10 +96,53 @@ while True:
 print()
 fecha_cita = input("Ingrese la fecha de la cita (dd/mm/aaaa): ")
 
+# Valor de la cita y valor unitario de la atención
+if tipo_cliente == "Particular":
+    valor_cita = 80000
+
+    if tipo_atencion == "Limpieza":
+        valor_atencion_unitario = 60000
+    elif tipo_atencion == "Calzas":
+        valor_atencion_unitario = 80000
+    elif tipo_atencion == "Extracción":
+        valor_atencion_unitario = 100000
+    elif tipo_atencion == "Diagnóstico":
+        valor_atencion_unitario = 50000
+
+elif tipo_cliente == "EPS":
+    valor_cita = 5000
+
+    if tipo_atencion == "Limpieza":
+        valor_atencion_unitario = 0
+    elif tipo_atencion == "Calzas":
+        valor_atencion_unitario = 40000
+    elif tipo_atencion == "Extracción":
+        valor_atencion_unitario = 40000
+    elif tipo_atencion == "Diagnóstico":
+        valor_atencion_unitario = 0
+
+elif tipo_cliente == "Prepagada":
+    valor_cita = 30000
+
+    if tipo_atencion == "Limpieza":
+        valor_atencion_unitario = 0
+    elif tipo_atencion == "Calzas":
+        valor_atencion_unitario = 10000
+    elif tipo_atencion == "Extracción":
+        valor_atencion_unitario = 10000
+    elif tipo_atencion == "Diagnóstico":
+        valor_atencion_unitario = 0
+
+# Calcular valores finales
+valor_atencion = valor_atencion_unitario * cantidad
+valor_total = valor_cita + valor_atencion
+
 
 # Datos registrados
 print()
-print("Datos registrados:")
+print("========================================")
+print("RESUMEN DE LA CITA")
+print("========================================")
 print("Cédula:", cedula)
 print("Nombre:", nombre)
 print("Teléfono:", telefono)
@@ -108,3 +151,7 @@ print("Tipo de atención:", tipo_atencion)
 print("Cantidad:", cantidad)
 print("Prioridad:", prioridad)
 print("Fecha de la cita:", fecha_cita)
+print("Valor de la cita: $", valor_cita)
+print("Valor unitario de la atención: $", valor_atencion_unitario)
+print("Valor total de la atención: $", valor_atencion)
+print("Valor total a pagar: $", valor_total)
