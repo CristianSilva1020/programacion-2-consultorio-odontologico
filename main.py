@@ -236,3 +236,37 @@ for cliente in clientes:
         "- Atención:", cliente["tipo_atencion"],
         "- Valor atención: $", cliente["valor_atencion"]
     )
+
+    # Buscar cliente por cédula
+print()
+print("========================================")
+print("BÚSQUEDA DE CLIENTE")
+print("========================================")
+
+cedula_buscar = input("Ingrese la cédula del cliente que desea buscar: ")
+
+cliente_encontrado = None
+
+for cliente in clientes:
+    if cliente["cedula"] == cedula_buscar:
+        cliente_encontrado = cliente
+        break
+
+if cliente_encontrado is not None:
+    print()
+    print("Cliente encontrado:")
+    print("Cédula:", cliente_encontrado["cedula"])
+    print("Nombre:", cliente_encontrado["nombre"])
+    print("Teléfono:", cliente_encontrado["telefono"])
+    print("Tipo de cliente:", cliente_encontrado["tipo_cliente"])
+    print("Tipo de atención:", cliente_encontrado["tipo_atencion"])
+    print("Cantidad:", cliente_encontrado["cantidad"])
+    print("Prioridad:", cliente_encontrado["prioridad"])
+    print("Fecha de la cita:", cliente_encontrado["fecha_cita"])
+    print("Valor de la cita: $", cliente_encontrado["valor_cita"])
+    print("Valor unitario de la atención: $", cliente_encontrado["valor_atencion_unitario"])
+    print("Valor total de la atención: $", cliente_encontrado["valor_atencion"])
+    print("Valor total a pagar: $", cliente_encontrado["valor_total"])
+else:
+    print()
+    print("No se encontró un cliente con la cédula ingresada.")
